@@ -17,6 +17,7 @@
 
 from pycha.chart import Chart
 from pycha.color import hex2rgb
+from pycha.utils import safe_unicode
 
 
 class LineChart(Chart):
@@ -67,6 +68,7 @@ class LineChart(Chart):
                                + self.layout.chart.x,
                                point.y * self.layout.chart.h
                                + self.layout.chart.y)
+                    # # cx.show_text(str(point.yval))
                     # we remember the last X coordinate to close the area
                     # properly. See bug #4
                     lastX = point.x
@@ -83,6 +85,23 @@ class LineChart(Chart):
                 cx.set_source_rgb(*self.colorScheme[storeName])
                 cx.stroke()
 
+            # Draw yvals text, add by Zhang Kun
+            if self.options.yvals and self.options.yvals.show:
+                cx.save()
+                cx.set_font_size(self.options.yvals.fontSize)
+                cx.set_source_rgb(*hex2rgb(self.options.yvals.fontColor))
+
+                for point in self.points:
+                    if point.name == storeName:
+                        val_str = safe_unicode(str(point.yval), self.options.encoding)
+                        extents = cx.text_extents(val_str)
+
+                        cx.move_to(point.x * self.layout.chart.w
+                                   + self.layout.chart.x,
+                                   point.y * self.layout.chart.h
+                                   + self.layout.chart.y + extents[1]/2)
+                        cx.show_text(str(point.yval))
+                cx.restore()
 
         cx.save()
         cx.set_line_width(self.options.stroke.width)
