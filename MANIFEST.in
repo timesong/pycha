@@ -1,0 +1,7 @@
+recursive-include chavier *.py
+recursive-include examples *.py
+recursive-include pycha *.py
+recursive-include tests *.py
+include *.txt
+include COPYING
+include AUTHORS

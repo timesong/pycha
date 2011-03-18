@@ -1,0 +1,92 @@
+Changes
+=======
+
+0.6.1 (unreleased)
+------------------
+- ...
+
+0.6.0 (2010-12-31)
+------------------
+- Buildout support
+- Documentation revamped
+- Debug improvements
+- Autopadding
+- Make the unicode strings used in labels safer
+
+0.5.3 (2010-03-29)
+------------------
+- New title color option
+- Fix crash in chavier application
+- New horizontal axis lines. Options to turn it (and vertical ones) on and off
+- Improve precision in axis ticks
+- Add some examples and update old ones
+
+0.5.2 (2009-09-26)
+------------------
+- Add a MANIFEST.in to explictly include all files in the source distribution
+
+0.5.1 (2009-09-19)
+------------------
+- Several bug fixes (Lorenzo)
+- Draw circles instead of lines for scatter chart symbols (Lorenzo)
+- Error bars (Yang Zhang)
+- Improve tick labels (Simon)
+- Add labels with yvals next to the bars (Simon (Vsevolod) Ilyushchenko)
+- Change the project website (Lorenzo)
+
+0.5.0 (2009-03-22)
+------------------
+- Bar chart fixes (Adam)
+- Support for custon fonts in the ticks (Ged)
+- Support for an 'interval' option (Nicolas)
+- New color scheme system (Lorenzo)
+- Stacked bar charts support (Lorenzo)
+
+0.4.2 (2009-02-15)
+------------------
+- Much better documentation (Adam)
+- Fixes integer division when computing xscale (Laurent)
+- Fix for a broken example (Lorenzo)
+- Use labelFontSize when rendering the axis (Adam Przywecki)
+- Code cleanups. Now it should pass pyflakes and pep8 in most files (Lorenzo)
+- Support for running the test suite with python setup.py test (Lorenzo)
+- Support for SVG (and PDF, Postscript, Win32, Quartz) by changing the way
+  we compute the surface dimensions (Lorenzo)
+
+0.4.1 (2008-10-29)
+------------------
+- Fix a colon in the README.txt file (Lorenzo)
+- Add a test_suite option to setup.py so we can run the tests before deployment
+  (Lorenzo)
+
+0.4.0 (2008-10-28)
+------------------
+- Improved test suite (Lorenzo, Nicolas)
+- Many bugs fixed (Lorenzo, Stephane Wirtel)
+- Support for negative values in the datasets (Nicolas, Lorenzo)
+- Chavier, a simple pygtk application for playing with Pycha charts (Lorenzo)
+- Allow the legend to be placed relative to the right and bottom of the canvas
+  (Nicolas Evrard)
+- Easier debugging by adding __str__ methods to aux classes (rectangle, point,
+  area, ...) (Lorenzo)
+- Do not overlap Y axis label when ticks label are not rotated (John Eikenberry)
+
+0.3.0 (2008-03-22)
+------------------
+- Scattered charts (Tamas Nepusz <ntamas_AT_rmki.kfki.hu>)
+- Chart titles (John Eikenberry <jae_AT_zhar.net>)
+- Axis labels and rotated ticks (John)
+- Chart background and surface background (John)
+- Automatically augment the light in large color schemes (John)
+- Lots of bug fixes (John and Lorenzo)
+
+0.2.0 (2007-10-25)
+------------------
+- Test suite
+- Python 2.4 compatibility (patch by Miguel Hernandez)
+- API docs
+- Small fixes
+
+0.1.0 (2007-10-17)
+------------------
+- Initial release
