@@ -25,4 +25,5 @@ lines = (
     ('pie.py', 352),
     ('scatter.py', 38),
     ('stackedbar.py', 121),
+    ('radar.py', 323),
 )
