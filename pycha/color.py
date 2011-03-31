@@ -173,7 +173,7 @@ class FixedColorScheme(ColorScheme):
     def __init__(self, keys, colors=[]):
         super(FixedColorScheme, self).__init__(keys)
 
-        if len(keys) != len(colors):
+        if len(keys) > len(colors):
             raise ValueError("You must provide as many colors as datasets "
                              "for the fixed color scheme")
 
