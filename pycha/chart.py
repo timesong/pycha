@@ -191,6 +191,7 @@ class Chart(object):
             if self.minyval * self.maxyval > 0 and self.minyval > 0:
                 self.minyval = 0.0
 
+
         self.yrange = self.maxyval - self.minyval
         if self.yrange == 0:
             self.yscale = 1.0
@@ -546,12 +547,18 @@ class Chart(object):
 
         surface_width, surface_height = self.getSurfaceSize()
 
+        cx.select_font_face(self.options.legend.labelFont,
+                            cairo.FONT_SLANT_NORMAL,
+                            cairo.FONT_WEIGHT_NORMAL)
+        cx.set_font_size(self.options.legend.labelFontSize)
+
         # Compute legend dimensions
         padding = 4
         bullet = 15
         width = 0
         height = padding
         keys = self._getDatasetsKeys()
+
         for key in keys:
             extents = cx.text_extents(key)
             width = max(extents[2], width)
@@ -833,6 +840,8 @@ DEFAULT_OPTIONS = Option(
         borderColor='#000000',
         borderWidth=2,
         hide=False,
+        labelFont='Tahoma',
+        labelFontSize=9,
         position=Option(top=20, left=40, bottom=None, right=None),
     ),
     padding=Option(
